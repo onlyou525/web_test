@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<title>ÂÖ²¥</title>
+		<script type="text/javascript">
+		var imageArray=["kafei1.jpg","kafei2.jpg","kafei3.jpg","kafei4.jpg","kafei5.jpg",];
+		var imageIndex=1;
+		var imageTimer;
+		
+		function startRotate(){
+			var rotateFunc=function(){
+			var image=document.getElementById("img1");
+			image.src="images/"+imageArray[imageIndex];
+			if(imageIndex==imageArray.length-1)
+				imageIndex=0;
+			else
+				imageIndex++;
+			};
+			imageTimer=window.setInterval(rotateFunc,3000);
+		}
+		function stopRotate(){
+			window.clearInterval(imageTimer);
+		}
+		</script>
+	</head>
+	<body onload="startRotate();">
+		<h1>¹ã¸æÂÖ²¥</h1>
+		<img id="img1" style="width:200px" src="images/kafei1.jpg" onmouseover="stopRotate();" onmouseout="startRotate();">
+	</body>
+</html>
